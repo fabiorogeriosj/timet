@@ -6,6 +6,7 @@ Time tracker manager in terminal.
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
 [![Windows Build][appveyor-image]][appveyor-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
 
 ## Install
 
@@ -73,3 +74,5 @@ We can not lose the focus that is to have a super simple and functional tool to 
 [travis-url]: https://travis-ci.org/fabiorogeriosj/timet
 [appveyor-image]: https://img.shields.io/appveyor/ci/fabiorogeriosj/timet/master.svg?label=windows
 [appveyor-url]: https://ci.appveyor.com/project/fabiorogeriosj/timet
+[coveralls-image]: https://img.shields.io/coveralls/fabiorogeriosj/timet/master.svg
+[coveralls-url]: https://coveralls.io/r/fabiorogeriosj/timet?branch=master

@@ -1,0 +1,30 @@
+{
+  "name": "timet",
+  "version": "0.1.0",
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "npm run lint && NODE_ENV=test jest --coverage",
+    "test-windows": "npm run lint && set NODE_ENV=test&& jest --coverage"
+  },
+  "standard": {
+    "globals": [
+      "beforeAll",
+      "afterAll",
+      "beforeEach",
+      "afterEach",
+      "describe",
+      "it",
+      "test",
+      "expect"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "standard": "^10.0.2"
+  },
+  "bin": "./bin/timet"
+}

@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var minimist = require('minimist')
+
+var args = minimist(process.argv.slice(2))
+
+if (args.v || args.version) {
+  console.log(require('../package.json').version)
+  process.exit()
+}
+
+if (!args._.length) {
+  console.log()
+  console.log('  Usage: {NAME} [command] [options]')
+  console.log()
+  console.log('  Commands:')
+  console.log()
+  console.log('    hello\t\tPrint "Hello world!"')
+  console.log()
+  console.log('  Options:')
+  console.log()
+  console.log('    -v, --version\tShow current version')
+  console.log()
+  process.exit()
+}
+
+var lib = require('../lib')
+
+if (args._.indexOf('hello') !== -1) {
+  console.log(lib.hello())
+  process.exit()
+}

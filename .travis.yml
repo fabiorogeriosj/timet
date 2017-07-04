@@ -15,4 +15,4 @@ sudo: false
 cache:
   directories:
     - node_modules
-script: "npm test"
+script: "npm run lint && set NODE_ENV=test&& jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

@@ -5,11 +5,10 @@ Time tracker manager in terminal.
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
-[![Windows Build][appveyor-image]][appveyor-url]
 
 ## Install
 
-```bash
+```shell
 npm install -g timet
 ```
 
@@ -23,13 +22,13 @@ Its functionality is simple because schedules are stored in text files separated
 
 To register you need to send two parameters, first the time spent and then a description of the time spent:
 
-```bash
+```shell
 timet 8h Created a new resource to do deploy referring to project task #34 ppline
 ```
 
 Or you can enter the date you want to make the point:
 
-```bash
+```shell
 timet 4/7/2017 8h Created a new resource to do deploy referring to project task #34 ppline
 ```
 > Note: The format of the date you are going to inform will depend on the first setup you performed and configured, if you want to change the default settings, edit the timet.json file.
@@ -38,13 +37,13 @@ timet 4/7/2017 8h Created a new resource to do deploy referring to project task 
 
 By default the timet lists the last 31 days of registration:
 
-```bash
+```shell
 timet 
 ```
 
 You can filter the result by passing two parameters with the start date and fnial date:
 
-```bash
+```shell
 timet 2/20/2017 3/20/2017
 ```
 > Note: The format of the date you are going to inform will depend on the first setup you performed and configured, if you want to change the default settings, edit the timet.json file.
@@ -53,7 +52,7 @@ timet 2/20/2017 3/20/2017
 
 To remove a register you need to enter the date and the register id:
 
-```bash
+```shell
 timet remove 4/7/2017 7
 ```
 

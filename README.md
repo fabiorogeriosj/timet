@@ -27,6 +27,12 @@ To register you need to send two parameters, first the time spent and then a des
 ```shell
 timet 8h Created a new resource to do deploy referring to project task #34 ppline
 ```
+```shell
+timet 35m Checked infra of deploy
+```
+```shell
+timet 4:45 Weekly planning meeting
+```
 
 Or you can enter the date you want to make the point:
 
@@ -37,13 +43,19 @@ timet 4/7/2017 8h Created a new resource to do deploy referring to project task 
 
 ### List registers
 
-By default the timet lists the last 31 days of registration:
+By default the timet lists the last 3 days of registration:
 
 ```shell
 timet 
 ```
 
-You can filter the result by passing two parameters with the start date and fnial date:
+You can list more days by entering the number of days to be listed:
+
+```shell
+timet 7
+```
+
+Or you can filter the result by passing two parameters with the start date and fnial date:
 
 ```shell
 timet 2/20/2017 3/20/2017

@@ -4,10 +4,11 @@ var fs = require('fs')
 var path = require('path')
 var minimist = require('minimist')
 var colors = require('colors')
+var low = require('lowdb')
 var lib = require('../lib')
 var homedir = require('os').homedir()
 
-var args = minimist(process.argv.slice(2))
+global.args = minimist(process.argv.slice(2))
 
 if (args.v || args.version) {
   console.log(require('../package.json').version)
@@ -15,6 +16,7 @@ if (args.v || args.version) {
 }
 
 function drawLogo(){
+  process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H')
   console.log()
   console.log()
   console.log(' ', '        '.bgWhite.black)
@@ -24,13 +26,42 @@ function drawLogo(){
   console.log()
 }
 
-if (!args._.length) {
-  drawLogo()
-  if(fs.existsSync(path.join(homedir, 'timet.json'))){
-    lib.list()
-  } else {
-    lib.setup(function(){
+if(!fs.existsSync(path.join(homedir, 'timet.json'))){
+  lib.setup(function(){
+    process.exit()
+  })
+} else {
+  var runner = false
+  if (!runner && !args._.length || Number.isInteger(args._[0])) {
+    runner = true
+    drawLogo()
+    lib.list(function(err){
+      process.exit()
+    })
+  }
+
+  if(!runner && args._.length && args._[0] === 'remove'){
+    runner=true
+   lib.remove(function(err){
+      if(err) console.log(err)
+      process.exit()
+    }) 
+  }
+
+  if(!runner && args._.length >= 2 && (args._[0].indexOf('h') >= 0 || args._[0].indexOf('H') >= 0 || args._[0].indexOf('m') >= 0 || args._[0].indexOf('M') >= 0 || args._[0].indexOf(':') >= 0) ){
+    runner = true
+    lib.register(function(err){
+      if(err) console.log(err)
       process.exit()
     })
   }
 }
+
+
+
+
+
+
+
+
+

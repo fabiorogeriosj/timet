@@ -1,6 +1,7 @@
 {
   "name": "timet",
   "version": "0.7.0",
+  "description": "Time tracker manager in terminal.",
   "scripts": {
     "lint": "standard --fix",
     "test": "npm run lint && NODE_ENV=test jest --coverage",
@@ -19,6 +20,21 @@
     ]
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiorogeriosj/timet.git"
+  },
+  "author": "Fabio Rogerio SJ <fabio.rogerio.sj@gmail.com> (http://fabiorogeriosj.com.br)",
+  "bugs": {
+    "url": "https://github.com/fabiorogeriosj/timet/issues"
+  },
+  "keywords": [
+    "time tracker",
+    "time manager",
+    "tool",
+    "developer",
+    "terminal"
+  ],
   "dependencies": {
     "colors": "^1.1.2",
     "minimist": "^1.2.0",

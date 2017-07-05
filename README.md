@@ -1,4 +1,4 @@
-![Timet Logo](img/logo.jpg)
+![Timet Logo](https://raw.githubusercontent.com/fabiorogeriosj/fabiorogeriosj.github.io/master/logo_time_tracker.jpg)
  
 Time tracker manager in terminal.
 

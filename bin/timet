@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
+var fs = require('fs')
+var path = require('path')
 var minimist = require('minimist')
+var colors = require('colors')
+var lib = require('../lib')
+var homedir = require('os').homedir()
 
 var args = minimist(process.argv.slice(2))
 
@@ -9,24 +14,23 @@ if (args.v || args.version) {
   process.exit()
 }
 
-if (!args._.length) {
+function drawLogo(){
   console.log()
-  console.log('  Usage: {NAME} [command] [options]')
   console.log()
-  console.log('  Commands:')
+  console.log(' ', '        '.bgWhite.black)
+  console.log(' ', '  TIME  '.bgWhite.black,'  TRACKER'.white)
+  console.log(' ', '        '.bgWhite.black)
   console.log()
-  console.log('    hello\t\tPrint "Hello world!"')
   console.log()
-  console.log('  Options:')
-  console.log()
-  console.log('    -v, --version\tShow current version')
-  console.log()
-  process.exit()
 }
 
-var lib = require('../lib')
-
-if (args._.indexOf('hello') !== -1) {
-  console.log(lib.hello())
-  process.exit()
+if (!args._.length) {
+  drawLogo()
+  if(fs.existsSync(path.join(homedir, 'timet.json'))){
+    lib.list()
+  } else {
+    lib.setup(function(){
+      process.exit()
+    })
+  }
 }

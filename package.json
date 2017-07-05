@@ -1,6 +1,6 @@
 {
   "name": "timet",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "scripts": {
     "lint": "standard --fix",
     "test": "npm run lint && NODE_ENV=test jest --coverage",

@@ -1,6 +1,6 @@
 {
   "name": "timet",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Time tracker manager in terminal.",
   "scripts": {
     "lint": "standard --fix",

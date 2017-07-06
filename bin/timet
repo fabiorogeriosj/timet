@@ -4,8 +4,10 @@ var fs = require('fs')
 var path = require('path')
 var minimist = require('minimist')
 var colors = require('colors')
+var moment = require('moment')
 var lib = require('../lib')
 var homedir = require('os').homedir()
+var configDir = path.join(homedir, 'timet.json')
 
 global.args = minimist(process.argv.slice(2))
 
@@ -23,6 +25,17 @@ function drawLogo(){
   console.log(' ', '        '.bgWhite.black)
   console.log()
   console.log()
+}
+
+function isTime(t){
+  t = t.toString()
+  return (t.indexOf('h') >= 0 || t.indexOf('H') >= 0 || t.indexOf('m') >= 0 || t.indexOf('M') >= 0 || t.indexOf(':') >= 0)
+}
+
+function isDate(d){
+  var config = require(configDir)
+  var date = moment(d, config.format)
+  return date.isValid()
 }
 
 if(!fs.existsSync(path.join(homedir, 'timet.json'))){
@@ -44,7 +57,7 @@ if(!fs.existsSync(path.join(homedir, 'timet.json'))){
    lib.remove(function(err){
       if(err) console.log(err)
       process.exit()
-    }) 
+    })
   }
 
   if(!runner && args._.length >= 2 && (args._[0].indexOf('h') >= 0 || args._[0].indexOf('H') >= 0 || args._[0].indexOf('m') >= 0 || args._[0].indexOf('M') >= 0 || args._[0].indexOf(':') >= 0) ){
@@ -54,13 +67,19 @@ if(!fs.existsSync(path.join(homedir, 'timet.json'))){
       process.exit()
     })
   }
+
+  if(!runner && args._.length && args._.length > 2 && isTime(args._[1]) && isDate(args._[0])){
+    runner=true
+   lib.register({ timeInfo: args._[1], date: args._[0], description: global.args._.slice(2).join(' ')},function(err){
+      if(err) console.log(err)
+      process.exit()
+    })
+  }
+
+  if(!runner){
+    console.log()
+    console.log(' ', ' OPS! '.bgRed, 'Incorrect parameters, check the documentation!')
+    console.log()
+    process.exit()
+  }
 }
-
-
-
-
-
-
-
-
-

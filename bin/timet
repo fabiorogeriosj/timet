@@ -44,10 +44,18 @@ if(!fs.existsSync(path.join(homedir, 'timet.json'))){
   })
 } else {
   var runner = false
+  if(!runner && args['jira-login'] && args['jira-host']) {
+    runner = true
+    lib.jiraConfiguration(function(err){
+      if(err) console.log(err)
+      process.exit()
+    })
+  }
   if (!runner && !args._.length || Number.isInteger(args._[0])) {
     runner = true
     drawLogo()
     lib.list(function(err){
+      if(err) console.log(err)
       process.exit()
     })
   }
@@ -71,6 +79,15 @@ if(!fs.existsSync(path.join(homedir, 'timet.json'))){
   if(!runner && args._.length && args._.length > 2 && isTime(args._[1]) && isDate(args._[0])){
     runner=true
    lib.register({ timeInfo: args._[1], date: args._[0], description: global.args._.slice(2).join(' ')},function(err){
+      if(err) console.log(err)
+      process.exit()
+    })
+  }
+
+  if(!runner && args._.length && args._.length === 2 && isDate(args._[0]) && isDate(args._[1])){
+    runner=true
+    drawLogo()
+   lib.list({ dateInit: args._[0], dateEnd: args._[1] },function(err){
       if(err) console.log(err)
       process.exit()
     })

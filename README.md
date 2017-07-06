@@ -82,7 +82,7 @@ Integrations are ideas for when you are recording a new note Time Tracker makes 
 
 See the implemented tools and the configuration parameters:
 
-**Jira: ** `timet --jira-login username:password --jira-host myjira.atlassian.net`
+**Jira:** `timet --jira-login username:password --jira-host myjira.atlassian.net`
 
 ## Do you have suggestions for improvements?
 

@@ -62,6 +62,12 @@ timet 2/20/2017 3/20/2017
 ```
 > Note: The format of the date you are going to inform will depend on the first setup you performed and configured, if you want to change the default settings, edit the timet.json file.
 
+You can generate an output in the txt file by passing the `--report` parameter:
+
+```shell
+timet 2/20/2017 3/20/2017 --report
+```
+
 ### Remove register
 
 To remove a register you need to enter the date and the register id:
@@ -69,6 +75,14 @@ To remove a register you need to enter the date and the register id:
 ```shell
 timet remove 4/7/2017 7
 ```
+
+### Integrations
+
+Integrations are ideas for when you are recording a new note Time Tracker makes a launch in your management and project tool.
+
+See the implemented tools and the configuration parameters:
+
+**Jira:** `timet --jira-login username:password --jira-host myjira.atlassian.net`
 
 ## Do you have suggestions for improvements?
 

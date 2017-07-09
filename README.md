@@ -1,5 +1,5 @@
 ![Timet Logo](https://raw.githubusercontent.com/fabiorogeriosj/timet/master/img/logo.jpg)
- 
+
 Time tracker manager in terminal.
 
 [![NPM Version][npm-image]][npm-url]
@@ -14,7 +14,7 @@ Time tracker manager in terminal.
 npm install -g timet
 ```
 
-![Timet Demo](https://raw.githubusercontent.com/fabiorogeriosj/timet/master/img/demo.png)
+![Timet Demo](https://raw.githubusercontent.com/fabiorogeriosj/timet/master/img/print.png)
 
 ## Using
 
@@ -48,7 +48,7 @@ timet 4/7/2017 8h Created a new resource to do deploy referring to project task 
 By default the timet lists the last 3 days of registration:
 
 ```shell
-timet 
+timet
 ```
 
 You can list more days by entering the number of days to be listed:

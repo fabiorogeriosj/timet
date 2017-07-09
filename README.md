@@ -1,4 +1,4 @@
-![Timet Logo](https://raw.githubusercontent.com/fabiorogeriosj/fabiorogeriosj.github.io/master/logo_time_tracker.jpg)
+![Timet Logo](https://raw.githubusercontent.com/fabiorogeriosj/timet/master/img/logo.jpg)
  
 Time tracker manager in terminal.
 
@@ -13,6 +13,8 @@ Time tracker manager in terminal.
 ```shell
 npm install -g timet
 ```
+
+![Timet Demo](https://raw.githubusercontent.com/fabiorogeriosj/timet/master/img/demo.png)
 
 ## Using
 

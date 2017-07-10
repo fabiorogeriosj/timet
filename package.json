@@ -1,6 +1,7 @@
 {
   "name": "timet",
-  "version": "0.11.0",
+  "version": "0.13.0",
+  "description": "Time tracker manager in terminal",
   "scripts": {
     "lint": "standard --fix",
     "test": "npm run lint && NODE_ENV=test jest --coverage",

@@ -84,7 +84,13 @@ Integrations are ideas for when you are recording a new note Time Tracker makes 
 
 See the implemented tools and the configuration parameters:
 
-**Jira:** `timet --jira-login username:password --jira-host myjira.atlassian.net`
+| Name          | Configuration/Example |
+| ------------- | ------------- |
+| **Jira:**     | `timet --jira-login username:password --jira-host myjira.atlassian.net`  |
+|               | For each record that has been entered the ticket ID will be registered in Jira as WorkLog: `timet 1h Created a new action #PROJ-1021` |
+| **Trello:**   | `timet --trello-key c478221b668 --trello-token 6a436593335320b048d2`  |
+|               | For each record that has been entered the ID of the card will be recorded in Trello as a WorkLog comment: `timet 1h Created a new action #Rp08U2wO` |
+|               | For use integration with Trello you need generate a token and get your key for your user in: https://trello.com/app-key |
 
 ## Do you have suggestions for improvements?
 

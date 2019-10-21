@@ -43,6 +43,12 @@ timet 4/7/2017 8h Created a new resource to do deploy referring to project task 
 ```
 > Note: The format of the date you are going to inform will depend on the first setup you performed and configured, if you want to change the default settings, edit the timet.json file.
 
+For each record you can use tags. Use at the end of the description @text.
+
+```shell
+timet 35m Meeting about git @project1 @teaching @test
+```
+
 ### List registers
 
 By default the timet lists the last 3 days of registration:
